@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ecommerce.component.css'],
 })
 export class EcommerceComponent implements OnInit {
-  products = [
+  products = []
+  initialList = [
     { name: 'mobile', price: '30300' },
     { name: 'ac', price: '33000' },
     { name: 'tv', price: '20000' },
@@ -48,28 +49,32 @@ export class EcommerceComponent implements OnInit {
     { name: 'photoframe', price: '750' },
   ];
   showGrid = true;
-  constructor() {}
+  constructor() {
+    this.products = this.initialList;
+  }
   toggleView = (value) => {
     this.showGrid = value;
   };
-  filterPrice = () => {
-    console.log('price');
-    this.products.sort((a, b) => (a.price > b.price ? 1 : -1));
+  filterPrice = (start, final) => {
+    this.products = this.initialList.filter((item)=>{
+      if (item.price >= start && item.price <= final) {
+        return item;
+      }
+    })
   };
-  filterName = () => {
-    console.log('cost');
-    this.products.sort((a, b) => (a.name > b.name ? 1 : -1));
-  };
+
   ngOnInit(): void {}
 
   filter(value: string){
     switch(value) {
-      case "price":
-        this.filterPrice()
+      case "1to100":
+        this.filterPrice(10,100);
          break;
-      case "name":
-         this.filterName()
+      case "101to500":
+         this.filterPrice(101,500);
          break;
+      case "501to1000":
+        this.filterPrice(501,1000);
     }
   }
 }

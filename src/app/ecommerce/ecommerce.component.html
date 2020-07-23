@@ -15,10 +15,11 @@
             ><mat-icon aria-hidden="false" aria-label="Example home icon">view_headline</mat-icon></mat-button-toggle
           >
         </mat-button-toggle-group>
-        <select (change)="filter($event.target.value)" style="width:100px;">
-          <option value="" disabled selected hidden>Sort By</option>
-          <option value="price">Price</option>
-          <option value="name">Name</option>
+        <select (change)="filter($event.target.value)" style="width:120px;">
+          <option value="" disabled selected hidden>Filter</option>
+          <option value="1to100">10$ - 100$</option>
+          <option value="101to500">101$ - 500$</option>
+          <option value="501to1000">501$ - 1000$</option>
         </select> 
       </div>
     </div>
