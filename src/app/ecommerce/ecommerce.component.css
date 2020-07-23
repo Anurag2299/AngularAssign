@@ -1,0 +1,18 @@
+.mat-grid-list{
+  margin-left: 40px;
+}
+
+.mat-card-image{
+  width: calc(100% + 0px);
+}
+
+.btn-container{
+  display:flex;
+  justify-content: space-between;
+  padding: 0 40px;
+
+}
+
+.mat-button-toggle-group{
+  margin-right: 10px;
+}

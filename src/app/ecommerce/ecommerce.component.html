@@ -1,0 +1,62 @@
+<div>
+  <div>
+    <div class="spacer"></div>
+
+    <div class="btn-container">
+      <div></div>
+
+      <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle value="grid" (click)="toggleView(true)"
+            ><mat-icon aria-hidden="false" aria-label="Example home icon">view_module</mat-icon>
+            </mat-button-toggle
+          > 
+          <mat-button-toggle value="list" (click)="toggleView(false)"
+            ><mat-icon aria-hidden="false" aria-label="Example home icon">view_headline</mat-icon></mat-button-toggle
+          >
+        </mat-button-toggle-group>
+        <select (change)="filter($event.target.value)" style="width:100px;">
+          <option value="" disabled selected hidden>Sort By</option>
+          <option value="price">Price</option>
+          <option value="name">Name</option>
+        </select> 
+      </div>
+    </div>
+  </div>
+  <mat-grid-list *ngIf="showGrid" cols="4">
+    <mat-grid-tile *ngFor="let product of products">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <img
+          width="100px"
+          mat-card-image
+          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p>{{ product.price | currency }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list *ngIf="!showGrid" cols="2">
+    <mat-grid-tile *ngFor="let product of products">
+      <mat-card class="example-card" margin="20px">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p>{{ product.price | currency }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

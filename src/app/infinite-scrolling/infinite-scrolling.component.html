@@ -1,0 +1,18 @@
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <section *ngFor="let item of arr; let i = index">
+    <div class="example-label">
+      Box {{i+1}}
+      <div class="example-button-row">
+        <button mat-raised-button (click)="clickButton(i+1)">
+          Primary
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

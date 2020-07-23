@@ -1,0 +1,14 @@
+.example-label {
+  height: 200px;
+  width: 200px;
+  border: 1px;
+  border-style: solid;
+  border-radius: 20%;
+  background-color: blueviolet;
+  text-align: center;
+  margin: 10px;
+}
+
+.example-button-row {
+  margin-top: 35%;
+}

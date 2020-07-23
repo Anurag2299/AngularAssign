@@ -1,0 +1,7 @@
+<div style="max-height: 100px; overflow: scroll; margin-top: -40px; overflow-x: hidden;">
+  <div *ngFor="let time of timevalue; let i = index">
+    <p *ngIf="i%2 == 0">Started at {{time | date:"medium"}}</p>
+    <p *ngIf="i%2!=0">Paused at {{time | date:"medium"}}</p>
+  </div>
+</div>
+

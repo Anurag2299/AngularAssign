@@ -1,0 +1,41 @@
+<div>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <div class="main-div">
+        <app-countdown1 [count]="num"> </app-countdown1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="part2">
+                
+        <form>
+            <div class="gridding2">
+            <div class="partA">
+                <label for="timer_limit" class="timer_label">Enter Timer Limit</label>
+                
+            </div>
+            <div class="partB">
+                <input  placeholder="Time in sec" name="inputVariable" [(ngModel)]="num"><br><br>
+                <button type="submit" form="form" value="Submit" (click)="tempfunct($event)" class="btn1">Start/Pause</button>
+                <input type="reset" value="Reset" onClick="window.location.reload()">
+                
+            </div>
+            <div class="partC" style="overflow:auto;">
+                <p *ngFor="let value of pausedat">paused at {{value}}</p>
+                
+            </div>
+        </div>
+        </form>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <app-timestamp1 [timevalue]="arr"></app-timestamp1>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><app-count1 [startvalue]="start" [pausevalue]="pause"></app-count1
+    ></mat-grid-tile>
+  </mat-grid-list>
+</div>
